@@ -1,0 +1,15 @@
+answer = input("Podaj datę urodzenia w formacie DD-MM-RRRR ")
+answer = answer.split("-")
+if len(answer) != 3:
+    raise ValueError("Nieprawidłowy format daty urodzenia. Napisz literami dzień miesiąc i rok urodzenia i oddziel je myślnikami")
+try:
+  int(answer[1]) and int(answer[-1])
+  month = int(answer[1])
+  year = int(answer[-1])
+  if month < 0 or month > 12 or year < 1875 or year > 2025:
+      raise ValueError("Nie wygłupiaj sie wpisz prawdziwy wiek")
+  else:
+      age_in_months = (2025 - year) * 12 + 8 - month
+      print("masz " + str(age_in_months) + " miesięcy")
+except TypeError:
+  raise TypeError("Nieprawidłowy format daty urodzenia. Napisz literami dzień miesiąc i rok urodzenia i oddziel je myślnikami")
