@@ -6,7 +6,7 @@ try:
   int(answer[1]) and int(answer[-1])
   month = int(answer[1])
   year = int(answer[-1])
-  if month in range(1, 12) or year in range(1875, 2025):
+  if month in range(1, 13) or year in range(1875, 2026):
     age_in_months = (2025 - year) * 12 + 8 - month
     print("masz " + str(age_in_months) + " miesięcy")
   else:
